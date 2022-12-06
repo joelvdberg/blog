@@ -1,0 +1,16 @@
+name: Blog GitHub Pages Publish
+
+# For now, publish on every push on every branch. Later this should become only the main branch.
+on: 
+  push:
+    branches: main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - name: asciidoctor-ghpages
+      uses: manoelcampos/asciidoctor-ghpages-action@v2
+      with:
+        source_dir: .
