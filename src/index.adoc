@@ -1,1 +1,8 @@
-testing the jekyll plugin
+= Blog
+:author: Joël van den Berg
+
+== Blog 1
+Lorum ipsum
+
+== Blog 2
+ for (int i = 0);
