@@ -30,7 +30,7 @@ url: "" # the base hostname & protocol for your site, e.g. http://example.com
 # github_username:  jekyll
 
 # Build settings
-# theme: minima
+theme: minima
 #asciidoc: {}
 #asciidoctor:
 #  base_dir: :docdir
@@ -39,10 +39,10 @@ url: "" # the base hostname & protocol for your site, e.g. http://example.com
 #  - idseparator=_
 #  - source-highlighter=coderay
 #  - icons=font
-remote_theme: pages-themes/minimal@v0.2.0
-plugins:
+#remote_theme: pages-themes/minimal@v0.2.0
+#plugins:
 #  - jekyll-feed
-- jekyll-remote-theme
+#- jekyll-remote-theme
 
 # Exclude from processing.
 # The following items will not be processed, by default.
