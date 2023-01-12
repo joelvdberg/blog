@@ -18,7 +18,7 @@ gem "jekyll-remote-theme"
 
 # If you have any plugins, put them here!
 group :jekyll_plugins do
-#  gem 'jekyll-asciidoc', '~> 3.0.0'
+  gem 'jekyll-asciidoc', '~> 3.0.0'
 # gem "jekyll-feed", "~> 0.12"
 end
 

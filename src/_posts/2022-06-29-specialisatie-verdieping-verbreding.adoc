@@ -1,0 +1,25 @@
+---
+layout: post
+title:  "Specialisatie: verdieping of verbreding"
+categories: opleiding specialisatie persoonlijke-ontwikkeling
+excerpt: "Als we gaan specialiseren, moeten we dan verdiepen of verbreden?"
+---
+Voor de ontwikkeling van een product is een team verantwoordelijk. Dit team bevat verschillende disciplines, in ons geval (naast de Product Owner) de ontwikkelaar en de tester. Vanuit de gedachte van zelforganiserende, multidisciplinaire teams, zullen de teamleden de benodigde kennis voor productontwikkeling moeten vergaren. We hebben echter met een aantal beperkende factoren te maken: we hebben te weinig budget voor grote teams, te weinig testers om voor elk team een tester te kunnen toewijzen en tussen deze twee rollen niet altijd een volledige dekking van de benodigde disciplines voor het opleveren van een product. Het is dus voordehand liggend dat we niet langer té specialistisch ons werk uitvoeren binnen een team, maar ons juist ontwikkelen richting de vaardigheden die werkelijk nodig zijn. Vaardigheden zijn bijvoorbeeld:
+
+* Architectuur
+* Testen
+* Systeembeheer
+* Programmeren
+* Documenteren
+* Scripten
+* Beveiliging
+* Bedrijfsprocessen
+* Beheer en onderhoud
+
+Welke vaardigheden nodig zijn, is dus afhankelijk van het op te leveren product. Het is ook duidelijk dat er (in onze situatie) geen team gevormd kan worden waarbij elk lid verantwoordelijk is voor één van de vaardigheden. En hoewel normaliter de software ontwikkelaar veel van de vaardigheden op zich neemt, is dat voor de vaardigheid testen slechts uitzonderlijk. Ja, het is verstandig om degene die de implementatie maakt niet ook de validatie en/of verificatie uit te laten voeren, maar dat neemt niet weg dat ieder teamlid zou moeten kunnen testen. Hetzelfde geldt immers voor het uitvoeren van peer-reviews op de code. Tegelijkertijd kan het voor iemand die vaardig is in het testen van software, ook heel nuttig zijn om zich te verbreden richting andere vaardigheden, om zo effectiever te kunnen valideren en verifiëren.
+
+Ook de vaardigheden van het beheer van het systeem en de actief opererende applicaties worden vaak buiten het ontwikkelteam gehouden. Het product wordt bij oplevering overgedragen aan een ander (team) dat de applicatie daadwerkelijk bruikbaar moet gaan maken voor de eindgebruiker. Ook hiervoor geldt dat ontwikkelaars en beheerders er baad bij hebben om van elkaar leren, wat tegelijkertijd ook baad heeft voor het op te leveren product.
+
+Als we accepteren dat de oplossing die we bieden wordt gevormd gedurende de ontwikkeling ervan, en dat zelfs de oplossingsrichting kan veranderen door een verandering in de context, dan betekent dit dus ook dat de benodigde vaardigheden kunnen veranderen en dat het team dus ook mee moet ontwikkelen met de oplossing. Naast de verbredende specialisatie, kan hiervoor ook verdiepende specialisatie nodig zijn. Het team moet ook hiervoor de ruimte krijgen en nemen; en trainingen of specialisten aantrekken waar nodig.
+
+Hoewel het uiteindelijke doel van ons werk het opleveren van een product dat een oplossing biedt voor het probleem van de gebruiker, is de grootste winst de mogelijkheid om jezelf te ontwikkelen en hierdoor verandering en uitdaging in het werk te behouden.

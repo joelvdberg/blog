@@ -1,0 +1,72 @@
+---
+layout: post
+title:  "Concept Testplan"
+categories: requirements testen testplan
+excerpt: "Een voorstel voor het maken van een nieuwe vorm van ons testplan, ter vervanging van het algemene testplan dat beter past in een watervalachtige aanpak."
+---
+== De huidige situatie
+
+In de link:/blog/user-stories-en-features.html[vorige blog post] over documentatie en het beschrijven van onze functionele en technische implementaties, werden nog een aantal documenten genoemd, waaronder het testplan. Het testplan wordt door ons vaak gerealiseerd in de vorm van een document, dat beschrijft hoe we onze software testen. We beschrijven hoe we volgens het V-model testen, en hoe hierin vier niveaus worden onderscheiden. Tegelijkertijd wordt er terecht toegegeven dat wij onze software niet hebben ontwikkeld volgens de ontwerp methodiek die in het V-model wordt beschreven. Dus wij ontwerpen niet van tevoren een systeem, sub-systemen, en componenten.
+
+Wederom proberen we een concept vanuit een waterval-georiënteerde methodiek te laten passen in een incrementele en iteratieve methodiek. Omdat we incrementeel en iteratief ontwikkelen, wordt het testplan dus ook incrementeel en iteratief ontwikkeld, en net zoals het Functioneel Ontwerp en het Technisch ontwerp ook pas na de werkelijke implementatie.
+
+== Voorstel voor een nieuw testplan
+
+We kunnen het iteratieve en incrementele ontwikkelproces inrichten om tot een betere aanpak voor onze testen te komen. In teams hebben we het vaker gehad over het opstellen van acceptatiecriteria. Met behulp van de acceptatiecriteria ontstaat er minder discussie tussen ontwikkelaar en tester over wanneer een taak volbracht is. De moeilijkheid zit 'm echter juist in het definiëren van deze acceptatiecriteria. Het antwoord ligt echter al voor de hand, hoewel dat het er niet per se makkelijker op maakt. Acceptatie criteria moeten eigenlijk opgesteld worden samen met de gebruiker, in de breedste zin van het woord gebruiker. We werken vaak wel met user stories, maar weten niet altijd de wensen van onze _users_ te vatten in een story. Behavior Driven Development heeft hier een pragmatisch antwoord op kunnen geven.
+
+Allereerst is het nodig om de gebruikers in kaart te brengen en met deze gebruiker te praten over de problemen die ze graag opgelost willen zien worden. Deze beschrijvingen zijn de verhalen van de gebruiker. De user stories worden besproken met het ontwikkelteam en de gebruikers op het moment dat het tijd wordt om de user stories op te pakken. Er begint dan een dialoog waaruit scenario's volgen voor de user story. Een uitwerking zou bijvoorbeeld als volgt kunnen zijn.
+
+----
+ALS EEN onderzoeker WIL IK een bishop berekening uitvoeren ZODAT ik de kans weet dat een dijk bezwijkt
+SCENARIO eenvoudig bishop glijvlak:
+    GEGEVEN EEN straal en een middelpunt
+    WANNEER de gegevens ingevuld worden
+    DAN zal de cirkel zichtbaar worden gemaakt voor de onderzoeker
+----
+
+----
+SCENARIO eenvoudig bishop glijvlak buiten het zicht:
+    GEGEVEN EEN straal en een middelpunt 
+    WANNEER de gegevens ingevuld worden
+    EN de getekende cirkel buiten het zichtveld valt
+    DAN zal het zichtveld verplaatst worden naar de resulterende cirkel
+----
+
+----
+SCENARIO een verkeerde waarde voor de straal van het bishop glijvlak:
+    GEGEVEN EEN negatieve straal en een middelpunt
+    WANNEER de gegevens ingevuld worden
+    DAN zal het duidelijk worden dat een negatieve straal geen geldige waarde is
+    EN zal de cirkel niet getekend worden
+----
+
+Deze scenario's kunnen op verschillende abstractieniveaus worden gedefinieerd. Voor het laatste scenario is het bijvoorbeeld goed om ook te bespreken wat een goede manier kan zijn voor het duidelijk maken van de fout.
+
+----
+SCENARIO verkeerde waarden voor de straal van het bishop glijvlak:
+    GEGEVEN EEN negatieve straal
+    WANNEER de straal ingevuld wordt in het invoerveld
+    DAN zal het invoerveld en de tekst rood kleuren
+    EN verschijnt een pop-up met een verklaring voor de fout
+----
+
+En voor het tekenen van een cirkel is het volgende scenario te verzinnen.
+
+----
+SCENARIO tekenen van een cirkel:
+    GEGEVEN EEN straal van 3 en een middelpunt op (3,4)
+    WANNEER de cirkel getekend wordt
+    DAN ontvangt de renderer een opdracht om te tekenen: een cirkel met een straal van 3, een lijndikte van 2 en met middelpunt op X van 3 en Y van 4
+----
+
+Door het op deze manier uitwerken van de scenario's komen de acceptatiecriteria naar boven en kan een testplan opgesteld worden om de criteria te verifiëren of te valideren. Er kan ook op dit niveau rekening gehouden worden met eisen betreffende de kwaliteit van de oplossing. Het is namelijk heel eenvoudig een scenario te definiëren waarbij wordt gedefinieerd hoe snel een antwoord terug komt, of om de nauwkeurigheid van een antwoord te specificeren.
+
+Voor het testplan kan bepaald worden wat er nodig is. Hierbij kan men bijvoorbeeld denken aan een benodigde configuratie van het systeem, extra tools die het mogelijk maken bepaalde inzichten te verwerven, zoals profiling tools, of het automatiseren van testen.
+
+== Voordelen
+
+De tester wordt op deze manier veel meer betrokken bij de validatie en verificatie van de gebruikers wensen, zowel functioneel als niet-functioneel. Zij zullen meer verantwoordelijkheid kunnen pakken voor de manier waarop getest wordt en zich daardoor ook verantwoordelijk voelen voor de kwaliteit van het product. Er komt meer ruimte voor de creativiteit en ontwikkeling van de testers.
+
+Het testen en het ontwikkelen kunnen meer parallel uitgevoerd worden. Omdat de acceptatiecriteria van te voren gedefinieerd zijn, kan er ook al een test worden ontwikkeld. Die zal voor de afronding van de implementatie natuurlijk falen, maar aan het einde van de implementatie moeten slagen.
+
+We laten de arbitraire opdeling van systeemtest, integratietest en unittest los. Deze verdeling is namelijk niet meer relevant voor de manier waarop we de gebruikerswensen valideren en verifiëren. Het is veel belangrijker te kijken naar de methodiek in plaats van de categorie die we eraan geven.

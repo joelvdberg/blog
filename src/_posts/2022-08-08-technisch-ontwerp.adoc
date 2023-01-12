@@ -1,0 +1,25 @@
+---
+layout: post
+title:  "Technisch ontwerp"
+categories: requirements documenteren beschrijven agile
+excerpt: "Een beschrijving hoe we ontwerpen in een wendbaar proces, en wat daarbij zorgt voor een goede overdracht."
+---
+== Wél documenteren
+
+Bij Deltares wordt er in teams voornamelijk volgens een agile proces gewerkt. Hoewel dit in de praktijk betekent dat er geen praktische noodzaak is voor de documenten die traditioneel opgesteld werden om vervolgens overgedragen te worden, komen vanuit de eis van *onderhoudbaarheid* van software wel nog steeds naar voren dat dergelijke documenten opgeleverd dienen te worden. In dit artikel wordt voor het Technisch Ontwerp, dat deel uitmaakt van de traditionele documentatiestapel, bekeken wat het doel is en of deze aansluit bij de achterliggende wens. Daarna wordt er een alternatief voorgesteld dat beter aansluit bij de achterliggende wens.
+
+== Het technisch ontwerp
+
+In waterval achtige ontwikkelmethodieken wordt het technisch ontwerp gebruikt om te vertellen wat het ontwikkelteam zal implementeren. Ontwerp en implementatie staan in dit proces dus compleet los van elkaar. Vanuit deze gedachte is het mogelijk om het ontwikkelteam tijdens het proces te vervangen door een ander team, waarbij het resultaat gelijk is: de realisatie van het ontwerp. Dit heeft voordelen wanneer er rekening gehouden moet worden met het risico dat het ontwikkelteam, om wat voor reden dan ook, moet stoppen met ontwikkelen en een ander ontwikkelteam verder gaat.
+
+In de praktijk zal er tijdens de ontwikkeling altijd worden afgeweken van het ontwerp, om uiteenlopende redenen. Er zal dus ook aandacht nodig zijn om het ontwerp hierop aan te passen, maar dit zal uiteindelijk alleen het verschil met de werkelijkheid verkleinen, niet wegnemen.
+
+Ontwerpen in een agile proces
+Juist in een proces waarbij verandering (van de gebruikerswensen en eisen) wordt omarmd, zal deze manier van het aanpassen van het ontwerp ervoor zorgen dat het ontwerp continu achter de feiten aanloopt. De noodzaak van het ontwerpen wordt nog steeds erkent, maar niet langer overgedragen. Het gevolg van deze mentaliteitsverandering is dat het ontwerp de verantwoordelijkheid wordt ván het team in plaats van een overdracht áán het team.
+
+Binnen het team wordt het ontwerpen gebruikt als middel om discussies te starten met als doel een gedeeld beeld te krijgen van hoe de implementatie er globaal uit moet zien. Zonder overdracht is het ook niet meer noodzakelijk om het ontwerp vast te leggen in een apart document.
+
+== Het beantwoorden van de wens van overdraagbaarheid
+Zonder vastlegging, wordt het echter de vraag of er nog wel sprake kan zijn van een goede overdracht bij het wisselen van ontwikkelteam. Het antwoord op die vraag is: natuurlijk! Onderdeel van het omarmen van verandering is het accepteren van verandering aan de bestaande implementatie. De eerste aan wie de implementatie dus hoogstwaarschijnlijk overgedragen zal worden, is het ontwikkelteam zelf. Het ontwikkelteam is er dus zelf bij gebaad om de implementatie zo op te zetten dat deze op een later tijdstip eenvoudig te veranderen is. Daarom is het belangrijk dat het team de ruimte krijgt om aan de kwaliteit van de implementatie te werken, maar ook om de eigen kennis te blijven ontwikkelen.
+
+Om te kunnen beoordelen of een applicatie overdraagbaar is aan een volgend ontwikkelteam moet niet gekeken worden naar de beschikbaarheid van een document met de titel "Technisch Ontwerp", maar of er gebruik gemaakt wordt van de meest recente versie van technologieën, of er gebruik gemaakt wordt van technologieën met een grote gebruikersgroep, of de publieke API goed beschreven is, of er voorbeelden worden gegeven voor complexe stukken in de code, of er gebruik gemaakt wordt van een code style standaard, of er een review proces ingericht is dat hierop toetst en of dit is belegd en gehandhaafd wordt door het team als onderdeel van het ontwikkelproces.footnote:[Er is niet geprobeerd een uitputtende lijst van technieken op te sommen; er zijn meer technieken die toegepast kunnen worden voor de overdraagbaarheid van de implementatie.]

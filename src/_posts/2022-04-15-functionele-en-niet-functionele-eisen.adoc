@@ -1,0 +1,31 @@
+---
+layout: post
+title:  "Functionele en Niet-Functionele Eisen"
+categories: requirements
+excerpt: "Wat zijn functionele en niet-functionele eisen nu precies? Waarom het onderscheid tussen niet-fucntionele en functionele eisen niet constructief is in de realisatie ervan."
+---
+== Eisen
+
+Het waarschijnlijk meest voorkomende onderscheid tussen eisen wordt gemaakt tussen functionele en niet-functionele eisen. Dit onderscheid wordt gemaakt door te stellen dat functionele eisen beschrijven wat het systeem moet kunnen, terwijl de niet-functionele eisen beschrijven hoe het systeem deze functionaliteit uitvoert. Anderen maken liever een onderscheid tussen gedrag en representatie van een systeem. Ook is het mogelijk om het gedrag weer verder onder te verdelen. Al met al is er veel onderzoek naar de categorisering van eisen. Een paper die voor mij een startpunt heeft gevormd is Non-functional Requirements are not non-functional door Jonas Eckhardt et al.
+
+Papers, o.a. On Non-Functional Requirements door Martin Glinz, beschrijven daarnaast ook het probleem van de representatie van niet-functionele eisen, waarbij de representatie invloed heeft op de manier waarop je deze categoriseert. Bijvoorbeeld een eis over veiligheid kan gerepresenteerd zijn als "Het systeem voorkomt ongeautoriseerde toegang tot gevoelige informatie", wat niet functioneel is, terwijl "Het systeem verschaft toegang tot gevoelige informatie nadat gebruikers met gebruikersnaam en wachtwoord zichzelf hebben geïdentificeerd" wel functioneel is.
+
+Ondanks dat er dus veel discussie bestaat over hoe eisen te categoriseren, is het wel duidelijk dat de categorisering effect heeft op de manier waarop de eis in het ontwikkelproces wordt meegenomen. De functionele eisen krijgen veel aandacht en worden goed gedocumenteerd, geprioriteerd en geverifieerd. Overige eisen, die dan niet-functionele eisen worden genoemd, kunnen niet altijd goed worden gekwantificeerd, worden niet altijd gedocumenteerd en daardoor slechts beperkt geverifieerd.
+
+== Kwaliteit
+
+In mijn zoektocht naar een goed onderscheid tussen functionele en niet functionele eisen, die dus niet definitief te geven is, werd me ook duidelijk dat kwaliteit een directe relatie hebben met de eisen, doordat papers die het onderscheid beschrijven ook refereren naar de ISO kwaliteitsstandaard. Dit komt doordat er een grote overlap is tussen de kwaliteitseigenschappen die hier worden beschrijven en de categorisering die gebruikt wordt voor niet-functionele eisen.
+
+ISO 25010 beschrijft een kwaliteitsmodel waarbij functionele geschiktheid ook onderdeel is van de kwaliteit. Maar vaker wordt met kwaliteit de kwaliteitseigenschappen van een systeem bedoeld los van de functionele eigenschappen. Grofweg zou je dan dus kunnen stellen dat niet-functionele eisen dus de kwaliteit van een product beschrijven.
+
+== Conclusie
+
+Deltares heeft zich als doel gesteld om software te produceren dat wendbaar is. Daarnaast streeft men binnen DSC naar eigen zeggen kwaliteit na. Wendbaarheid, het kunnen aanpassen van de software met weinig risico, omvat, volgens mij, een aantal kwaliteitseigenschappen die volgens de ISO/IEC 25010 vallen onder onderhoudbaarheid ("The degree of effectiveness and efficiency with which a product … can be modified by the intended maintainers").
+
+Wendbaarheid of onderhoudbaarheid is dus slechts een deel van het volledige spectrum van kwaliteit. Het is belangrijk om voor alle belangrijke kwaliteitseigenschappen een beheersingsplan op te stellen. Een dergelijk plan moet bestaan uit de beschrijving van de kwaliteitseigenschap en de manier waarop geverifieert wordt dat het systeem de kwaliteitseigenschap heeft. Dit kan betekenen dat de kwaliteitseigenschap wordt onderverdeeld in functionele en niet-functionele eisen, en op zo'n manier worden geformuleerd dat het daadwerkelijk meetbaar wordt.
+
+== Voorbeeld
+
+Graag zou ik tot slot nog een voorbeeld willen geven waaruit duidelijk wordt dat het belangrijk is om hier over na te denken bij de ontwikkeling van het systeem. Een eenvoudig voor de verbeelding sprekend voorbeeld is de kwaliteitseigenschap Performance. De afgeleide eis die ik vaak geformuleerd zie worden is "De rekentijd moet acceptabel zijn". Als we spreken van acceptabel voor de eindgebruiker, dan zouden we daarvoor het gesprek kunnen aangaan met de gebruiker, waarin zij aangeven of het acceptabel is. Dit betekend echter dat je hier geen rekening mee kan houden tijdens de productontwikkeling. Verificatie gebeurt dus na oplevering.
+
+Een andere representatie van een eis voor de Performance zou kunnen zijn "Elke berekening moet binnen 30 minuten afgerond zijn". Deze formulering heeft effect op de kwaliteitseigenschap Satisfaction, omdat 30 minuten wellicht niet voor elke gebruiker acceptabel is. Het is nu echter wel mogelijk om kwantitatief oordeel te geven of aan de eis wordt voldaan door bij te houden hoe lang elke berekening in het systeem duurt. We zouden erachter kunnen komen dat 95% van de berekeningen inderdaad binnen 30 minuten worden afgerond. Je kan dan bediscussiëren of de eis aangepast mag worden van de stakeholders, zodat duidelijk wordt dat dit wel acceptabel is. Een mogelijke oplossing kan zijn dat de implementatie geoptimaliseerd wordt, wat mogelijk effect kan hebben op de onderhoudbaarheid van de implementatie. Het effect van een keus op de kwaliteitseigenschappen zal dus meegenomen moeten worden in de afweging voor de gekozen oplossing.

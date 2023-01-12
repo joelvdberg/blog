@@ -1,0 +1,32 @@
+---
+layout: post
+title:  "Versioning and Support Proposal"
+categories: versioning support
+excerpt: "This blog post was written as a proposal for cleaning up repositories containing a lot of older versions in branches."
+---
+Currently there are tags and branches which have been made when a certain versions was released, but can no longer be compiled. These versions sometimes are older than 5 years. The older the versions get, the higher becomes the chance that problems that will be found in these versions have already been solved or are otherwise no longer relevant. The question thus becomes whether problems with these old versions should be solved.
+
+At the moment, there isn't a clear approach for the support we deliver for older version, where _older version_ refers to a verions that has been released before the last release. At the same time a number of versions can be developed before the next version is released to the stakeholders. For these development versions, no support is provided.
+
+In the most ideal case every new version will also be immediatly adopted by all users, which is not currently the case. This means het we should actively communicate about the support we provide with _older versions_ when releasing new versions.
+
+Besided, there are differences in how the new version will affect the users. Sometimes a new versions solves a bug (patch release) that requires no further action from the users after updating. Sometimes a new versions contains new functionality that has been added (minor release) that should not require further action from the user; but the user might still decide to take further action based on new functionality that it can incorporate. Finally a new version can contain a change that does require an action from the user. Such change can be to redefine input files or a different way of navigating through the (user) interface.  More details about different types releases can be found in a previous blog post: link:/blog/maintaining-external-dependencies[Maintaining external dependencies]. 
+
+== Support for a release
+
+Due to the nature of patch releases, we should take a position in which problems with older patch versions should first be attempted to be resolved by moving to the newest version. This means that when a newer patch version is released, the support for the old versions is dropped immediately.
+
+For minor releases the proposal is to agree upon a support period of 6 months for older versions and communicate this support period to the end users clearly whenever a new version is released. The six month period gives us time to solve problems that users encounter when moving to the new minor version, while they can still work with the older version in the mean time.
+
+For major releases the proposal is to agree upon a longer support period, for example 2 years, in which we solve issues with the new versions while suggesting users to move towards the newest version. The support period is longer, because it is expected that users will have more problems when adapting to the incompatible changes.
+
+The link:#version-support[next figure] illustrates the support period per version, visualized by the horizontal dotted lines, in which link:https://semver.org/[semantic versioning] is used.
+
+[#version-support]
+.Versions (depicted using symantic versioning) and their support durations.
+image::/blog/assets/images/version-management.png[Version support management]
+
+[.lead]
+When adopting this schema, the starting point will be to communicate that all support for versions older than 2 year expires immediately; that support for minor versions older than 6 months expires immediately; and that support for all old patch versions expires immediately.
+
+Since communication with the users is essential for a correct working of the proposed scheme, it is advisable to also adapt the semantic versioning scheme.

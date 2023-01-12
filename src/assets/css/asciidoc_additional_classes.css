@@ -1,0 +1,24 @@
+.lead {
+  font-size:larger;
+}
+.title {
+  margin-bottom:12pt;
+}
+.text-center, .halign-center {
+  text-align: center;
+}
+.text-left, .halign-left {
+  text-align: left;
+}
+.text-right, .halign-right {
+  text-align: right;
+}
+.red {
+  color: #8B0000;
+}
+.green {
+  color: #009400;
+}
+li>p {
+  margin-bottom:0;
+}

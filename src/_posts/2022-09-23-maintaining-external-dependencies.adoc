@@ -1,0 +1,77 @@
+---
+layout: post
+title:  "Maintaining External Dependencies"
+categories: bibliotheken libraries guideline
+excerpt: "This blog post will describe a proposal for guideliness on how to maintain external dependencies in our project. It will start with a description of the context and terminology used in the actual way of working that is described after that."
+permalink: /maintaining-external-dependencies
+---
+== Context
+
+Dependencies can be divided into several dimensions. The dimensions that will be used to define the different ways of maintaining dependencies are _amount of control_ and _amount of affection_.
+
+== Amount of control
+
+Automatically, as part of a modular way of working, dependencies will be created as part of a product, by grouping cohesive functionalities together in a module and reusing that in other modules. As long as the development team itself is responsible for maintaining the dependency, it is an internal dependency. The team is in full control of the direction of its development.
+
+On the other hand, if the development team isn't responsible for maintaining the dependency, its development direction is also out of the hands of the team. Therefore, these external dependencies require measures to be put in place to make sure the latest modifications to the dependency matches its expected functionality. This definition of an external dependency means that from a product perspective external dependencies can also be developed in-house.
+
+== Amount of affection
+
+The second dimension is to what extend the use of the dependency affects the implementation of the product that is built. In general, those dependencies which we call frameworks have prescribed ways of how software should be implemented to work within the framework. This means that the use of a framework will have a great influence in the way the functionality needs to be implemented in order to be consumed by the framework.
+
+The other kind of dependencies are usually called libraries, and provide functionality that can used as part of functionality that needs to be implemented. Libraries have an API that dictate how functions need to be invoked, but this requirement can be very isolated from the rest of the implementation.
+
+== Version
+
+It is also important to note that dependencies should come with a certain version number for it. A commonly used schema for the definition of versions of dependencies is the link:https://semver.org/[semantic versioning] scheme. In short, it contains at least three numbers: the major version, minor version and patch version seperated by dots;
+
+ MAJOR.MINOR.PATCH
+
+An increment of the _major_ version, means that there has been a change that is not backwards compatible. An increment in the _minor_ version means that there has bee functionality added while remaining backwards compatible. An 
+increment of the _patch_ version means that there was a change while remaining backwards compatible.
+
+This distinction of updates to a dependency is used to propose different coarses of action. It is therefore not necessary that the same kind of versioning schema is used.
+
+== Proposed approach
+In general the dependencies should be updated as soon as possible because support can be dropped for them, meaning that important necessary changes (security patches) may no longer be released for those versions. The following table summarizes the approach. After the table, the actions are elaborated on.
+
+[cols="1,1,2,2"]
+|===
+2.2+| 2+^h|Control
+h|Internal h|External
+.2+h|Affection h|Library .2+a|Continuous integration|Major: Update or create issue +
+Minor: Update +
+Patch: Update
+h|Framework|Major: Spike +
+Minor: Update +
+Patch: Update
+|===
+
+=== Continuous integration
+
+All internal dependencies can be updated using continuous integration. An automatic test step in the build process will need to make sure that changes do not result in regression. This also means that there is no option to not include updated versions of dependencies.
+
+=== Update
+
+External dependencies should always be updated to their newer patch release versions. Patch releases are (should be) always backwards compatible, therefore there is little risk in introducing regression. At the same time, important security issues will be fixed using patch releases (if possible without introducing regression, obviously). An automatic test step in the build process will need to make sure that changes do not result in regression.
+
+Always update to the new version, because it should be backwards compatible, and regression will be covered by tests. Moreso, this is important for patches, since security issues are usually solved in patch updates.
+
+=== Update or create issue
+
+Using a versioning scheme with major version increments, incrementing the major version is a deliberate choice, because you know you will incur necessary effort for (some of) the users of the dependency to change the implementation to work with the changed interface. As a user, it is therfore necessary to identify the necessary changes to the implementation that interacts with the dependency.
+
+For a library, there is a possibility that you're not using any of the functionality where the backwards compatibility is broken. Therefore, testing with the newest version might prove that the newest version can be included, without any changes to the implementation. Otherwise, if the test fails, a new issue is created to make the necessary changes and update the dependency.
+
+=== Spike
+For frameworks, a major update is more likely to incur effort necessary to update the implementation to be compatible with the new version. Since a test is likely to fail, it is superfluous to perform. Instead, a spike should be created to evaluate the necessary effort. If effort is little, the update can be part of the spike. Otherwise, a new issue will be created that describes the sections where changes are necessary, so it can be estimated.
+
+Note that tests should be performed on all the quality attributes that a framework affects. Noteably, a framework used for developing a user interface, could have changes that change the way users have to interact with the software, thus affects the usability. This proves that tests should also be performed on the non-functional requirements.
+
+== When not to update
+
+There should be _no_ reason _not_ to update dependencies to their newer patch or minor versions. However, for major updates, it might be possible that the changes do not pass the tests. In that case, before the new versions can be used, the owners of the requirements should be informed and agree on the change.
+
+== Automation
+
+Updating and testing with new versions of dependencies are both automatable as part of the continous integration pipeline. Teams should put effort in setting up such a pipeline.

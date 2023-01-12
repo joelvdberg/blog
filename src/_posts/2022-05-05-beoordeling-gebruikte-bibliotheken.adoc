@@ -1,0 +1,88 @@
+---
+layout: post
+title:  "Beoordeling van Gebruikte Bibliotheken"
+categories: requirements bibliotheken libraries
+excerpt: "Waarom zouden we thrid-party libraries moeten gebruiken, en kunnen we beoordelen hoe goed ze passen binnen de gestelde eisen?"
+---
+== Risico's
+
+Over het algemeen kun je stellen dat het verstandig is om een bibliotheek van een derde partij te gebruiken voor benodigde functionaliteit. Het alternatief is om zelf de functionaliteit te implementeren. Maar wat zijn de risico's voor beide benaderingen?
+
+Wanneer je zelf aan de slag gaat met de benodigde functionaliteit zullen er middelen en kennis nodig zijn om deze functionaliteit te implementeren. Het grootste risico is dat de benodigde kennis niet aanwezig is. Je zult dan de kennis moeten aantrekken wat uiteraard tijd en geld kost.
+
+Daarnaast is er het risico dat de implementatie fouten zal bevatten, die pas aan het licht komen wanneer de applicatie in gebruik is. Hierdoor zullen er middelen beschikbaar moeten zijn om deze op te lossen.
+
+Voor deze twee risico's is een mogelijke mitigatie om bibliotheken van een derde partij te gebruiken. In deze bibliotheken zit de benodigde kennis geborgen. Bovendien worden deze bibliotheken door meer gebruikers onder handen genomen, waardoor de kans op het vinden van fouten groter wordt.
+
+Natuurlijk zijn er ook risico's bij het gebruik van bibliotheken van een derde partij. Zo kan deze partij het project laten vallen. Afhankelijk van het soort bibliotheek zijn er verschillende mitigatieopties. Zo kun je de bibliotheek vanaf dat moment zelf onderhouden, wanneer het een open-source project is. Je kunt kijken naar een alternatief dat dezelfde functionaliteit biedt. En natuurlijk kun je ook zelf de benodigde functionaliteit implementeren. Om de impact te verlagen zul je jezelf niet te afhankelijk moeten maken van de bibliotheek.
+
+Een ander risico is dat niet alle functionaliteit even goed aansluit op de vereisten. Dit kan betekenen dat er nog extra middelen nodig zijn om deze aansluiting te corrigeren. Een alternatief is het accepteren van de afwijking en het ter discussie stellen van de eisen.
+
+== Voordelen en nadelen
+
+Hieronder volgt een overzicht van de voordelen en nadelen van een eigen implementatie en het gebruik van een bibliotheek van een derde partij.
+
+[.text-center]
+====
+*Eigen implementatie*
+
+[green]#De oplossing en kennis daarvan wordt eigen gemaakt +
+Sluit aan op functionele en niet-functionele eisen +
+Scope beperkt tot wat nodig is#
+
+[red]#Kennis en middelen nodig voor de implementatie +
+Continu middelen voor onderhoud nodig +
+Omdat het wiel opnieuw uitgevonden wordt, kunnen ook dezelfde fouten gemaakt worden#
+
+*Bibliotheek van een derde partij*
+
+[green]#Gevalideerd en geverifieerd door een grotere gebruikersgroep +
+Geen kennis nodig van de implementatie +
+Ontwikkeling vereist geen eigen middelen#
+
+[red]#Afhankelijkheid maakt eigen applicatie ook gevoelig voor de koers en het beleid ervan +
+De grootte van je applicatie neemt meer toe dan strikt noodzakelijk +
+Beperkt of geen controle op de ontwikkelrichting van de bibliotheek#
+====
+
+== Afwegingen
+Waar je op let bij het kiezen van een bibliotheek van een derde partij en hoe je deze opneemt in de eigen implementatie is afhankelijk van verschillende aspecten. Een aantal belangrijke afwegingen worden hier beschreven.
+
+=== Scope
+Wanneer de scope van het gebruik van de bibliotheek groot is, zal ook de impact bij het optreden van een risico groter zijn. Bij zulke afhankelijkheden is het dus verstandig om te kijken hoe het onderhoud wordt gepleegd. Is er een grote gebruikersgroep, wordt naar deze gebruikersgroep geluisterd, wordt de bibliotheek regelmatig geüpdatet, hoe wordt omgegaan met backwards compatibility, zijn er long-time-support (LTS) versies, is er een roadmap voor nieuwe versies bekend, etc.
+
+Doordat de scope groot is, zal stabiliteit (van de interface) een belangrijke afweging zijn. Ook zal het niet veel zin hebben om de implementatie zo te ontwerpen dat deze onafhankelijk wordt van de implementatie van de afhankelijkheid. Immers wil je dat deze stabiel is en maak je gebruik van zoveel verschillende functionaliteit en concepten dat het moeilijk zal zijn deze te abstraheren tot een niveau zodat je de implementatie makkelijk zou kunnen vervangen.
+
+Een voorbeeld van een dergelijke bibliotheek is het .NET framework.
+
+Aan de andere kant heb je bibliotheken waarvan het gebruik slechts een beperkte scope heeft. In principe zou je hier ook kunnen overwegen om direct afhankelijk te zijn van de bibliotheek, maar je zult aandacht moeten besteden aan waar in de implementatie de afhankelijkheden zich zullen manifesteren. Het is bijvoorbeeld raadzaam om geen object uit de library te gebruiken om door je applicatie heen te blijven gebruiken. Hoewel je slechts afhankelijk bent van één type object, wordt hierdoor wel een bredere scope van de applicatie direct afhankelijk van de bibliotheek. In dat geval is het verstandig om technieken toe te passen (dependency inversion, adapter pattern) om deze afhankelijkheden te doorbreken.
+
+Een voorbeeld van een dergelijke bibliotheek is een JSON serializer/descerializer.
+
+=== Volwassenheid
+Hoewel men dus eigenlijk niet het wiel opnieuw zou moeten uitvinden, denkt men tegelijkertijd tóch vaak dat zij het beter kunnen. Dit kan mede verklaard worden door wat al eerder opgemerkt is: de bestaande bibliotheken sluiten niet volledig aan bij de functionele of niet-functionele eisen van een project. Het kan ook zijn dat bibliotheken zo ver in het ontwikkelproces zijn, dat het niet waardevol wordt geacht om over te gaan op een nieuwe technologie en het beter is om met de opgebouwde kennis opnieuw het probleem op te lossen.
+
+Wanneer wordt gekozen voor een bibliotheek die zich nog vroeg in het ontwikkeltraject bevindt, is het belangrijker dat er actief aan wordt ontwikkeld. Er zullen waarschijnlijk veel veranderingen plaats vinden voor nieuwe functionaliteit met een kans op het introduceren van (niet-)functionele regressie of een wijziging van de interface. Of de beoogde functionaliteit voldoet nog niet helemaal aan de verwachting. Het moet bekend zijn wat de doelen zijn, wat de scope is, hoeveel ontwikkelaars er aan werken, hoe niet-functionele eisen worden geborgen, hoe actief er wordt gereageerd op wensen vanuit gebruikers, hoe het project aan middelen komt, of het in opdracht van een bedrijf wordt ontwikkeld of iemands persoonlijke project is, etc.
+
+Het is belangrijk om in de code niet té afhankelijk te worden van de ontwikkeling van dit soort bibliotheken, omdat de kans groter is dat in een vroeg stadium het project stil wordt gezet of zelfs wordt ingetrokken. Je kan ook niet voorspellen hoe deze bibliotheken zich zullen ontwikkelen, en of dat blijft aansluiten bij de eisen voor het eigen product. Daarom kan er een groot risico ontstaan wanneer het succes van een product afhangt van dergelijke bibliotheken.
+
+Bij bibliotheken die volwassener zijn en zich dus verder in het ontwikkeltraject bevinden, is er een langere geschiedenis van bewezen adequaatheid opgebouwd door het gebruik van de bibliotheek in verschillende projecten. Deze bibliotheken zullen minder snel veranderen en daardoor minder risico hebben op veranderende interfaces of regressie. De keerzijde daarvan is dat er weinig invloed meer uitgeoefend kan worden op de reeds gestelde eisen voor de bibliotheek en deze dus aan moeten sluiten bij de eisen en beperkingen die gesteld zijn voor het eigen systeem.
+
+=== Aansluiting eisen
+Zoals al eerder genoemd, is het belangrijk om te kijken naar de aansluiting van eisen van de bibliotheek op de eisen van het eigen systeem. Het kan ook zijn dat de eisen van de bibliotheek maatgevend worden voor het eigen systeem. Dit kan voorkomen wanneer er geen betere alternatieven zijn op basis van "belangrijkere" eisen. Het is dus van belang om over het belang van eisen na te denken en een goede afweging hierin te maken.
+
+Het is mogelijk om verder te kijken dan de huidige geldende eisen, omdat bibliotheken nog verder ontwikkeld kunnen worden. Je maakt hierdoor de eigen roadmap van het product wel afhankelijk van de roadmap van de bibliotheek, die tevens wellicht niet eens bekend is voor de bibliotheek, wat extra risico met zich meebrengt.
+
+== Overige afwegingen
+Bibliotheken kunnen zowel open source als closed source worden aangeboden. Daarbij kan een closed source bibliotheek niet zelf aangepast worden en is er dus meer afhankelijkheid van de ontwikkelstrategie van de leverende partij. Bij open source bibliotheken is het mogelijk zelf de nodige wijzigingen door te voeren als alternatief voor de afhankelijkheid van de ontwikkelstrategie. Omdat de broncode beschikbaar is, is het ook mogelijk om zelf de ontwikkeling voort te zetten wanneer wordt besloten de bibliotheek niet verder te ontwikkelen. Door het gebruik van open source bibliotheken is het, afhankelijk van de licentie van de broncode, mogelijk dat ook het te ontwikkelen component ook open source aangeboden moet worden.
+
+Het is niet verplicht om de ontwikkeling te volgen van een bibliotheek en in plaats daarvan een specifieke versie te kiezen van een bibliotheek. Zolang het systeem nog in ontwikkeling is en niet alle uiteindelijke eisen duidelijk zijn, kan het echter wel waardevol zijn om te blijven integreren met nieuwe versies om zo met minimale inspanning mee te kunnen profiteren van nieuwe mogelijkheden van de bibliotheek.
+
+Bij LTS versies zullen er belangrijke updates beschikbaar worden gesteld. Belangrijke updates kunnen bestaan uit het oplossen van een mogelijk beveiligingsprobleem of verbeteringen voor de prestaties. Vaak worden er garanties gegeven over de stabiliteit op bijvoorbeeld de interface, compatibiliteit, ondersteuningsduur, etc.
+
+== Conclusie
+Bij de toevoeging van functionaliteit aan een systeem, zou er altijd gekeken moeten worden naar het bestaan van een bibliotheek of component die deze functionaliteit reeds heeft geïmplementeerd. Afhankelijk van o.a. de scope van de benodigde functionaliteit, de volwassenheid van de bibliotheek of component en de aansluiting met de eisen van het te ontwikkelen systeem, moeten er keuzes gemaakt worden voor mitigatieacties van de risico's die dit met zich meebrengt. Eén van de mitigatieacties kan zijn om de functionaliteit zelf te implementeren.
+
+Wat de keuze voor het hergebruik van bibliotheken makkelijker maakt, is dat het terecht komt in het systeem dat wordt ontwikkeld, en daarmee automatisch onderdeel vormt van de reikwijdte van de validatie en verificatie methodes voor het gehele systeem. Het verschil zit in de invloed die je hebt op het moment dat uit de validatie en verificatie methodes blijkt dat de bibliotheek niet voldoet.
+
+Uiteindelijk is het gebruik van een bibliotheek een ontwerpkeuze, die dus moet voldoen aan de gestelde eisen. De eisen kunnen komen vanuit de stakeholders, maar eisen kunnen ook voortvloeien uit ontwerpkeuzes van het systeem waarin de bibliotheek wordt gebruikt. Het is dus belangrijk om de positie van de bibliotheek in de architectuur te bepalen en de geldende eisen daaruit af te leiden en de bibliotheek daarop te toetsen.

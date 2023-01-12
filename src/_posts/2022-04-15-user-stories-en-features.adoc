@@ -1,0 +1,36 @@
+---
+layout: post
+title:  "User Stories en Features"
+categories: requirements user-stories features testen
+excerpt: "Een definitie voor user stories en features. De definities kunnen we gebruiken om te beschrijven hoe we aan de gebruikerswensen gehoor geven."
+permalink: /user-stories-en-features
+---
+== Behavior Driven Development
+
+In veel van onze projecten hebben we gebruik gemaakt van Jira om onze producten te ontwikkelen. Binnen Jira maken we gebruik van user stories om de beoogde functionaliteit in producten te beschrijven, te plannen en te implementeren. Na wat verdieping in de benadering van het beschrijven van eisen aan software vanuit de Behavior Driven Development (BDD) methodiek, heb ik de wens om de verschillende termen doelmatiger te gebruiken in ons softwareontwikkelproces.
+
+De basis van deze gedachte is de manier om in de wensen van de gebruiker te voorzien. De gebruiker beschrijft zijn probleem dat hij graag opgelost ziet worden.
+
+Wat we kunnen bieden is een systeem met bepaalde eigenschappen. Een deel van de eigenschappen zullen functioneel zijn. Voor het andere deel kan gedacht worden aan de manier waarop het systeem beschikbaar wordt gesteld, hoe snel gebruikers gewend kunnen raken aan het product, hoe toegankelijk het systeem wordt voor gebruikers met een optische beperking, etc. Hoe het systeem eruit gaat zien is nog niet bepaald. De eigenschappen van het systeem noemen we features.
+
+De gewenste features van een systeem komen naar de oppervlakte door met de gebruikers te praten over zijn probleem en mogelijke oplossingsrichtingen. Deze conversaties kunnen op verschillende manieren vastgelegd worden. Twee bekende voorbeelden zijn het gebruik van use cases, of minder formeel met user stories. Een user story beschrijft dus het probleem van de gebruiker en de features van het systeem die de oplossing vormen van het probleem. Het is dus ook goed voor te stellen dat voor het oplossen van een probleem, meerdere features nodig zijn. En andersom, dat er meerdere problemen worden opgelost voor de gebruiker door het toevoegen van een feature.
+
+In het gesprek over de oplossing met gebruikers kan gebruik gemaakt worden van scenario's. Een scenario specificeert verschillende situaties voor een feature, indien gewenst. Het is een manier om vast te leggen hoe het systeem moet reageren op een bepaald gebruik door de gebruiker. Door gebruikt te maken van scenario's is het tegelijkertijd eenvoudig om te verifiëren of een feature juist is geïmplementeerd.
+
+Omdat er samen met de gebruiker een vertaling is gemaakt van het probleem naar de oplossing, moet gevalideerd worden of het systeem na de toevoeging van de features inderdaad het probleem van de gebruiker oplost, of dat er features moeten worden toegevoegd, gewijzigd, of verwijderd. Omdat een feature dus een oplossing kan bieden voor meerdere problemen, is het zinvol om bij te houden welke features een relatie hebben met een user story en het probleem dat wordt opgelost met de user story. Zo kunnen er impact analyses uitgevoerd worden als een feature moet veranderen, of bepaald worden dat bepaalde problemen niet meer relevant zijn en de bijbehorende features wellicht ook "verwijderd" kunnen worden.
+
+== Verschillende type producten
+
+Ook binnen Deltares ontwikkelen we verschillende type producten. Elk product wordt ontwikkeld door een team met de benodigde expertise voor het product. Een product met een grafische gebruikersinterface, waarbij gebruiksvriendelijkheid een belangrijke kwaliteit is, wordt ontwikkeld met de expertise van een user experience designer. Een rekenkernel, waarbij het belangrijk is dat het model aansluit bij de wetenschappelijke achtergrond wordt ontwikkeld met de expertise van een domein expert.
+
+Door het opdelen van teams, ontstaat er automatisch een opdeling van het systeem (Conway's law) waarbij sommige producten gebruikt moeten worden door andere producten. Er zijn dus teams die desktop applicaties maken en teams die rekenkernels maken. Voor de desktop applicatie is het gebruikelijker om met de gebruiker te praten om achter de wensen te komen. Voor een rekenkernel kunnen we de echter ook een interface definiëren en ook gebruikers van deze interface. Waarschijnlijk zullen er minder features geïmplementeerd hoeven worden, maar per feature zijn er wel meer scenario's te definiëren. Het is dus ook voor rekenkernels mogelijk om het gesprek met gebruikers aan te gaan en user stories te definiëren.
+
+== Validatie en verificatie
+
+Met deze opdeling, kunnen we ook een relatie leggen met het valideren en verifiëren van het systeem met behulp van testen. _Verifiëren_ is het controleren of de implementatie juist gedaan is. _Valideren_ is het controleren of het juiste geïmplementeerd is.
+
+Je kunt verifiëren of de scenario's juist zijn geïmplementeerd. Bij de juiste implementatie van alle scenario's, kun je stellen dat je hebt geverifieerd dat de feature juist is geïmplementeerd. Vervolgens moet er gevalideerd worden of het probleem dat beschreven is in de bijbehorende user story opgelost is door de features. Dit kan alleen gedaan worden door de gebruiker.
+
+We onderscheiden drie niveaus van testen voor de verificatie van de implementatie: _unit tests, integration tests en system tests_.  Unit tests worden door ontwikkelaars geschreven voor het verifiëren van de implementatie van de kleinste bouwstenen van een applicatie. Er bestaan verschillende frameworks voor het opstellen en automatiseren van deze tests. Integration test verifiëren een juiste samenwerking tussen meerdere componenten. Dezelfde frameworks die gebruikt worden voor unit tests kunnen gebruikt worden voor integration tests. System tests verifiëren de implementatie van het systeem. Dit vereist ook de externe systemen waar het systeem gebruik van maakt, zoals databases en het besturingssysteem. Systeemtests kunnen geautomatiseerd worden. Het is echter de vraag hoeveel inspanning er geleverd moet worden om de test te automatiseren, en hoeveel voordeel dat oplevert.
+
+Afhankelijk van de features die geïmplementeerd worden, is het nodig om de verificatie op één of meerdere van deze niveaus uit te voeren. Daarnaast zijn er ook andere methodes die gebruikt kunnen worden voor de verificatie, waarvan code reviews en static code analysis voorbeelden zijn die we veel toepassen.
