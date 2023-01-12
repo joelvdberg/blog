@@ -1,0 +1,9 @@
+---
+layout: default
+title: About
+permalink: /about/
+---
+This blog is created as part of the knowledge sharing goal of Deltares. Please find out more about Deltares at our link:https://www.deltares.nl/[website]!
+
+This blog is created using link:https://github.com/jekyll[Jekyll], with the link:https://github.com/jekyll/minima[Minima] theme.
+
