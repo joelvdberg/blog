@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>User Stories en Features | Architecture at Deltares - Blog</title>
+<meta name="generator" content="Jekyll v3.9.2" />
+<meta property="og:title" content="User Stories en Features" />
+<meta name="author" content="Joël van den Berg" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Een definitie voor user stories en features. De definities kunnen we gebruiken om te beschrijven hoe we aan de gebruikerswensen gehoor geven." />
+<meta property="og:description" content="Een definitie voor user stories en features. De definities kunnen we gebruiken om te beschrijven hoe we aan de gebruikerswensen gehoor geven." />
+<link rel="canonical" href="/blog/user-stories-en-features" />
+<meta property="og:url" content="/blog/user-stories-en-features" />
+<meta property="og:site_name" content="Architecture at Deltares - Blog" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2022-04-15T00:00:00+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="User Stories en Features" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Joël van den Berg"},"dateModified":"2022-04-15T00:00:00+00:00","datePublished":"2022-04-15T00:00:00+00:00","description":"Een definitie voor user stories en features. De definities kunnen we gebruiken om te beschrijven hoe we aan de gebruikerswensen gehoor geven.","headline":"User Stories en Features","mainEntityOfPage":{"@type":"WebPage","@id":"/blog/user-stories-en-features"},"url":"/blog/user-stories-en-features"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/blog/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="/blog/feed.xml" title="Architecture at Deltares - Blog" /><!-- You can set your favicon here -->
+<!-- link rel="shortcut icon" type="image/x-icon" href="/blog/favicon.ico" -->
+<link rel="stylesheet" href="/blog/assets/css/asciidoc_additional_classes.css"></head>
+<body><header class="site-header">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/blog/">Architecture at Deltares - Blog</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/blog/about/">About</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">User Stories en Features</h1>
+    <p class="post-meta"><time class="dt-published" datetime="2022-04-15T00:00:00+00:00" itemprop="datePublished">
+        Apr 15, 2022
+      </time></p>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <div class="sect1">
+<h2 id="behavior_driven_development">Behavior Driven Development</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>In veel van onze projecten hebben we gebruik gemaakt van Jira om onze producten te ontwikkelen. Binnen Jira maken we gebruik van user stories om de beoogde functionaliteit in producten te beschrijven, te plannen en te implementeren. Na wat verdieping in de benadering van het beschrijven van eisen aan software vanuit de Behavior Driven Development (BDD) methodiek, heb ik de wens om de verschillende termen doelmatiger te gebruiken in ons softwareontwikkelproces.</p>
+</div>
+<div class="paragraph">
+<p>De basis van deze gedachte is de manier om in de wensen van de gebruiker te voorzien. De gebruiker beschrijft zijn probleem dat hij graag opgelost ziet worden.</p>
+</div>
+<div class="paragraph">
+<p>Wat we kunnen bieden is een systeem met bepaalde eigenschappen. Een deel van de eigenschappen zullen functioneel zijn. Voor het andere deel kan gedacht worden aan de manier waarop het systeem beschikbaar wordt gesteld, hoe snel gebruikers gewend kunnen raken aan het product, hoe toegankelijk het systeem wordt voor gebruikers met een optische beperking, etc. Hoe het systeem eruit gaat zien is nog niet bepaald. De eigenschappen van het systeem noemen we features.</p>
+</div>
+<div class="paragraph">
+<p>De gewenste features van een systeem komen naar de oppervlakte door met de gebruikers te praten over zijn probleem en mogelijke oplossingsrichtingen. Deze conversaties kunnen op verschillende manieren vastgelegd worden. Twee bekende voorbeelden zijn het gebruik van use cases, of minder formeel met user stories. Een user story beschrijft dus het probleem van de gebruiker en de features van het systeem die de oplossing vormen van het probleem. Het is dus ook goed voor te stellen dat voor het oplossen van een probleem, meerdere features nodig zijn. En andersom, dat er meerdere problemen worden opgelost voor de gebruiker door het toevoegen van een feature.</p>
+</div>
+<div class="paragraph">
+<p>In het gesprek over de oplossing met gebruikers kan gebruik gemaakt worden van scenario&#8217;s. Een scenario specificeert verschillende situaties voor een feature, indien gewenst. Het is een manier om vast te leggen hoe het systeem moet reageren op een bepaald gebruik door de gebruiker. Door gebruikt te maken van scenario&#8217;s is het tegelijkertijd eenvoudig om te verifiëren of een feature juist is geïmplementeerd.</p>
+</div>
+<div class="paragraph">
+<p>Omdat er samen met de gebruiker een vertaling is gemaakt van het probleem naar de oplossing, moet gevalideerd worden of het systeem na de toevoeging van de features inderdaad het probleem van de gebruiker oplost, of dat er features moeten worden toegevoegd, gewijzigd, of verwijderd. Omdat een feature dus een oplossing kan bieden voor meerdere problemen, is het zinvol om bij te houden welke features een relatie hebben met een user story en het probleem dat wordt opgelost met de user story. Zo kunnen er impact analyses uitgevoerd worden als een feature moet veranderen, of bepaald worden dat bepaalde problemen niet meer relevant zijn en de bijbehorende features wellicht ook "verwijderd" kunnen worden.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="verschillende_type_producten">Verschillende type producten</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Ook binnen Deltares ontwikkelen we verschillende type producten. Elk product wordt ontwikkeld door een team met de benodigde expertise voor het product. Een product met een grafische gebruikersinterface, waarbij gebruiksvriendelijkheid een belangrijke kwaliteit is, wordt ontwikkeld met de expertise van een user experience designer. Een rekenkernel, waarbij het belangrijk is dat het model aansluit bij de wetenschappelijke achtergrond wordt ontwikkeld met de expertise van een domein expert.</p>
+</div>
+<div class="paragraph">
+<p>Door het opdelen van teams, ontstaat er automatisch een opdeling van het systeem (Conway&#8217;s law) waarbij sommige producten gebruikt moeten worden door andere producten. Er zijn dus teams die desktop applicaties maken en teams die rekenkernels maken. Voor de desktop applicatie is het gebruikelijker om met de gebruiker te praten om achter de wensen te komen. Voor een rekenkernel kunnen we de echter ook een interface definiëren en ook gebruikers van deze interface. Waarschijnlijk zullen er minder features geïmplementeerd hoeven worden, maar per feature zijn er wel meer scenario&#8217;s te definiëren. Het is dus ook voor rekenkernels mogelijk om het gesprek met gebruikers aan te gaan en user stories te definiëren.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="validatie_en_verificatie">Validatie en verificatie</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Met deze opdeling, kunnen we ook een relatie leggen met het valideren en verifiëren van het systeem met behulp van testen. <em>Verifiëren</em> is het controleren of de implementatie juist gedaan is. <em>Valideren</em> is het controleren of het juiste geïmplementeerd is.</p>
+</div>
+<div class="paragraph">
+<p>Je kunt verifiëren of de scenario&#8217;s juist zijn geïmplementeerd. Bij de juiste implementatie van alle scenario&#8217;s, kun je stellen dat je hebt geverifieerd dat de feature juist is geïmplementeerd. Vervolgens moet er gevalideerd worden of het probleem dat beschreven is in de bijbehorende user story opgelost is door de features. Dit kan alleen gedaan worden door de gebruiker.</p>
+</div>
+<div class="paragraph">
+<p>We onderscheiden drie niveaus van testen voor de verificatie van de implementatie: <em>unit tests, integration tests en system tests</em>.  Unit tests worden door ontwikkelaars geschreven voor het verifiëren van de implementatie van de kleinste bouwstenen van een applicatie. Er bestaan verschillende frameworks voor het opstellen en automatiseren van deze tests. Integration test verifiëren een juiste samenwerking tussen meerdere componenten. Dezelfde frameworks die gebruikt worden voor unit tests kunnen gebruikt worden voor integration tests. System tests verifiëren de implementatie van het systeem. Dit vereist ook de externe systemen waar het systeem gebruik van maakt, zoals databases en het besturingssysteem. Systeemtests kunnen geautomatiseerd worden. Het is echter de vraag hoeveel inspanning er geleverd moet worden om de test te automatiseren, en hoeveel voordeel dat oplevert.</p>
+</div>
+<div class="paragraph">
+<p>Afhankelijk van de features die geïmplementeerd worden, is het nodig om de verificatie op één of meerdere van deze niveaus uit te voeren. Daarnaast zijn er ook andere methodes die gebruikt kunnen worden voor de verificatie, waarvan code reviews en static code analysis voorbeelden zijn die we veel toepassen.</p>
+</div>
+</div>
+</div>
+  </div><a class="u-url" href="/blog/user-stories-en-features" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/blog/"></data>
+
+  <div class="wrapper">
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">
+            <strong>Joël van den Berg</strong>
+          </li><li><a class="u-email" href="mailto:joel.vandenberg at deltares.nl">joel.vandenberg at deltares.nl</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>This blog will contain mostly opinionated articles about process, tools, languages and other software development related topics, applicable in the context at Deltares.</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer></body>
+
+</html>

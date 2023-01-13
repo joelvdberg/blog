@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Concept Testplan | Architecture at Deltares - Blog</title>
+<meta name="generator" content="Jekyll v3.9.2" />
+<meta property="og:title" content="Concept Testplan" />
+<meta name="author" content="Joël van den Berg" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Een voorstel voor het maken van een nieuwe vorm van ons testplan, ter vervanging van het algemene testplan dat beter past in een watervalachtige aanpak." />
+<meta property="og:description" content="Een voorstel voor het maken van een nieuwe vorm van ons testplan, ter vervanging van het algemene testplan dat beter past in een watervalachtige aanpak." />
+<link rel="canonical" href="/blog/requirements/testen/testplan/2022/06/28/concept-testplan.html" />
+<meta property="og:url" content="/blog/requirements/testen/testplan/2022/06/28/concept-testplan.html" />
+<meta property="og:site_name" content="Architecture at Deltares - Blog" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2022-06-28T00:00:00+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Concept Testplan" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Joël van den Berg"},"dateModified":"2022-06-28T00:00:00+00:00","datePublished":"2022-06-28T00:00:00+00:00","description":"Een voorstel voor het maken van een nieuwe vorm van ons testplan, ter vervanging van het algemene testplan dat beter past in een watervalachtige aanpak.","headline":"Concept Testplan","mainEntityOfPage":{"@type":"WebPage","@id":"/blog/requirements/testen/testplan/2022/06/28/concept-testplan.html"},"url":"/blog/requirements/testen/testplan/2022/06/28/concept-testplan.html"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/blog/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="/blog/feed.xml" title="Architecture at Deltares - Blog" /><!-- You can set your favicon here -->
+<!-- link rel="shortcut icon" type="image/x-icon" href="/blog/favicon.ico" -->
+<link rel="stylesheet" href="/blog/assets/css/asciidoc_additional_classes.css"></head>
+<body><header class="site-header">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/blog/">Architecture at Deltares - Blog</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/blog/about/">About</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Concept Testplan</h1>
+    <p class="post-meta"><time class="dt-published" datetime="2022-06-28T00:00:00+00:00" itemprop="datePublished">
+        Jun 28, 2022
+      </time></p>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <div class="sect1">
+<h2 id="de_huidige_situatie">De huidige situatie</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>In de <a href="/blog/user-stories-en-features.html">vorige blog post</a> over documentatie en het beschrijven van onze functionele en technische implementaties, werden nog een aantal documenten genoemd, waaronder het testplan. Het testplan wordt door ons vaak gerealiseerd in de vorm van een document, dat beschrijft hoe we onze software testen. We beschrijven hoe we volgens het V-model testen, en hoe hierin vier niveaus worden onderscheiden. Tegelijkertijd wordt er terecht toegegeven dat wij onze software niet hebben ontwikkeld volgens de ontwerp methodiek die in het V-model wordt beschreven. Dus wij ontwerpen niet van tevoren een systeem, sub-systemen, en componenten.</p>
+</div>
+<div class="paragraph">
+<p>Wederom proberen we een concept vanuit een waterval-georiënteerde methodiek te laten passen in een incrementele en iteratieve methodiek. Omdat we incrementeel en iteratief ontwikkelen, wordt het testplan dus ook incrementeel en iteratief ontwikkeld, en net zoals het Functioneel Ontwerp en het Technisch ontwerp ook pas na de werkelijke implementatie.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="voorstel_voor_een_nieuw_testplan">Voorstel voor een nieuw testplan</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>We kunnen het iteratieve en incrementele ontwikkelproces inrichten om tot een betere aanpak voor onze testen te komen. In teams hebben we het vaker gehad over het opstellen van acceptatiecriteria. Met behulp van de acceptatiecriteria ontstaat er minder discussie tussen ontwikkelaar en tester over wanneer een taak volbracht is. De moeilijkheid zit 'm echter juist in het definiëren van deze acceptatiecriteria. Het antwoord ligt echter al voor de hand, hoewel dat het er niet per se makkelijker op maakt. Acceptatie criteria moeten eigenlijk opgesteld worden samen met de gebruiker, in de breedste zin van het woord gebruiker. We werken vaak wel met user stories, maar weten niet altijd de wensen van onze <em>users</em> te vatten in een story. Behavior Driven Development heeft hier een pragmatisch antwoord op kunnen geven.</p>
+</div>
+<div class="paragraph">
+<p>Allereerst is het nodig om de gebruikers in kaart te brengen en met deze gebruiker te praten over de problemen die ze graag opgelost willen zien worden. Deze beschrijvingen zijn de verhalen van de gebruiker. De user stories worden besproken met het ontwikkelteam en de gebruikers op het moment dat het tijd wordt om de user stories op te pakken. Er begint dan een dialoog waaruit scenario&#8217;s volgen voor de user story. Een uitwerking zou bijvoorbeeld als volgt kunnen zijn.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>ALS EEN onderzoeker WIL IK een bishop berekening uitvoeren ZODAT ik de kans weet dat een dijk bezwijkt
+SCENARIO eenvoudig bishop glijvlak:
+    GEGEVEN EEN straal en een middelpunt
+    WANNEER de gegevens ingevuld worden
+    DAN zal de cirkel zichtbaar worden gemaakt voor de onderzoeker</pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>SCENARIO eenvoudig bishop glijvlak buiten het zicht:
+    GEGEVEN EEN straal en een middelpunt
+    WANNEER de gegevens ingevuld worden
+    EN de getekende cirkel buiten het zichtveld valt
+    DAN zal het zichtveld verplaatst worden naar de resulterende cirkel</pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>SCENARIO een verkeerde waarde voor de straal van het bishop glijvlak:
+    GEGEVEN EEN negatieve straal en een middelpunt
+    WANNEER de gegevens ingevuld worden
+    DAN zal het duidelijk worden dat een negatieve straal geen geldige waarde is
+    EN zal de cirkel niet getekend worden</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Deze scenario&#8217;s kunnen op verschillende abstractieniveaus worden gedefinieerd. Voor het laatste scenario is het bijvoorbeeld goed om ook te bespreken wat een goede manier kan zijn voor het duidelijk maken van de fout.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>SCENARIO verkeerde waarden voor de straal van het bishop glijvlak:
+    GEGEVEN EEN negatieve straal
+    WANNEER de straal ingevuld wordt in het invoerveld
+    DAN zal het invoerveld en de tekst rood kleuren
+    EN verschijnt een pop-up met een verklaring voor de fout</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>En voor het tekenen van een cirkel is het volgende scenario te verzinnen.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>SCENARIO tekenen van een cirkel:
+    GEGEVEN EEN straal van 3 en een middelpunt op (3,4)
+    WANNEER de cirkel getekend wordt
+    DAN ontvangt de renderer een opdracht om te tekenen: een cirkel met een straal van 3, een lijndikte van 2 en met middelpunt op X van 3 en Y van 4</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Door het op deze manier uitwerken van de scenario&#8217;s komen de acceptatiecriteria naar boven en kan een testplan opgesteld worden om de criteria te verifiëren of te valideren. Er kan ook op dit niveau rekening gehouden worden met eisen betreffende de kwaliteit van de oplossing. Het is namelijk heel eenvoudig een scenario te definiëren waarbij wordt gedefinieerd hoe snel een antwoord terug komt, of om de nauwkeurigheid van een antwoord te specificeren.</p>
+</div>
+<div class="paragraph">
+<p>Voor het testplan kan bepaald worden wat er nodig is. Hierbij kan men bijvoorbeeld denken aan een benodigde configuratie van het systeem, extra tools die het mogelijk maken bepaalde inzichten te verwerven, zoals profiling tools, of het automatiseren van testen.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="voordelen">Voordelen</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>De tester wordt op deze manier veel meer betrokken bij de validatie en verificatie van de gebruikers wensen, zowel functioneel als niet-functioneel. Zij zullen meer verantwoordelijkheid kunnen pakken voor de manier waarop getest wordt en zich daardoor ook verantwoordelijk voelen voor de kwaliteit van het product. Er komt meer ruimte voor de creativiteit en ontwikkeling van de testers.</p>
+</div>
+<div class="paragraph">
+<p>Het testen en het ontwikkelen kunnen meer parallel uitgevoerd worden. Omdat de acceptatiecriteria van te voren gedefinieerd zijn, kan er ook al een test worden ontwikkeld. Die zal voor de afronding van de implementatie natuurlijk falen, maar aan het einde van de implementatie moeten slagen.</p>
+</div>
+<div class="paragraph">
+<p>We laten de arbitraire opdeling van systeemtest, integratietest en unittest los. Deze verdeling is namelijk niet meer relevant voor de manier waarop we de gebruikerswensen valideren en verifiëren. Het is veel belangrijker te kijken naar de methodiek in plaats van de categorie die we eraan geven.</p>
+</div>
+</div>
+</div>
+  </div><a class="u-url" href="/blog/requirements/testen/testplan/2022/06/28/concept-testplan.html" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/blog/"></data>
+
+  <div class="wrapper">
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">
+            <strong>Joël van den Berg</strong>
+          </li><li><a class="u-email" href="mailto:joel.vandenberg at deltares.nl">joel.vandenberg at deltares.nl</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>This blog will contain mostly opinionated articles about process, tools, languages and other software development related topics, applicable in the context at Deltares.</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer></body>
+
+</html>

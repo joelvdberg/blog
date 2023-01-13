@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Maintaining External Dependencies | Architecture at Deltares - Blog</title>
+<meta name="generator" content="Jekyll v3.9.2" />
+<meta property="og:title" content="Maintaining External Dependencies" />
+<meta name="author" content="Joël van den Berg" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="This blog post will describe a proposal for guideliness on how to maintain external dependencies in our project. It will start with a description of the context and terminology used in the actual way of working that is described after that." />
+<meta property="og:description" content="This blog post will describe a proposal for guideliness on how to maintain external dependencies in our project. It will start with a description of the context and terminology used in the actual way of working that is described after that." />
+<link rel="canonical" href="/blog/maintaining-external-dependencies" />
+<meta property="og:url" content="/blog/maintaining-external-dependencies" />
+<meta property="og:site_name" content="Architecture at Deltares - Blog" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2022-09-23T00:00:00+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Maintaining External Dependencies" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Joël van den Berg"},"dateModified":"2022-09-23T00:00:00+00:00","datePublished":"2022-09-23T00:00:00+00:00","description":"This blog post will describe a proposal for guideliness on how to maintain external dependencies in our project. It will start with a description of the context and terminology used in the actual way of working that is described after that.","headline":"Maintaining External Dependencies","mainEntityOfPage":{"@type":"WebPage","@id":"/blog/maintaining-external-dependencies"},"url":"/blog/maintaining-external-dependencies"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/blog/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="/blog/feed.xml" title="Architecture at Deltares - Blog" /><!-- You can set your favicon here -->
+<!-- link rel="shortcut icon" type="image/x-icon" href="/blog/favicon.ico" -->
+<link rel="stylesheet" href="/blog/assets/css/asciidoc_additional_classes.css"></head>
+<body><header class="site-header">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/blog/">Architecture at Deltares - Blog</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/blog/about/">About</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Maintaining External Dependencies</h1>
+    <p class="post-meta"><time class="dt-published" datetime="2022-09-23T00:00:00+00:00" itemprop="datePublished">
+        Sep 23, 2022
+      </time></p>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <div class="sect1">
+<h2 id="context">Context</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Dependencies can be divided into several dimensions. The dimensions that will be used to define the different ways of maintaining dependencies are <em>amount of control</em> and <em>amount of affection</em>.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="amount_of_control">Amount of control</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Automatically, as part of a modular way of working, dependencies will be created as part of a product, by grouping cohesive functionalities together in a module and reusing that in other modules. As long as the development team itself is responsible for maintaining the dependency, it is an internal dependency. The team is in full control of the direction of its development.</p>
+</div>
+<div class="paragraph">
+<p>On the other hand, if the development team isn&#8217;t responsible for maintaining the dependency, its development direction is also out of the hands of the team. Therefore, these external dependencies require measures to be put in place to make sure the latest modifications to the dependency matches its expected functionality. This definition of an external dependency means that from a product perspective external dependencies can also be developed in-house.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="amount_of_affection">Amount of affection</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The second dimension is to what extend the use of the dependency affects the implementation of the product that is built. In general, those dependencies which we call frameworks have prescribed ways of how software should be implemented to work within the framework. This means that the use of a framework will have a great influence in the way the functionality needs to be implemented in order to be consumed by the framework.</p>
+</div>
+<div class="paragraph">
+<p>The other kind of dependencies are usually called libraries, and provide functionality that can used as part of functionality that needs to be implemented. Libraries have an API that dictate how functions need to be invoked, but this requirement can be very isolated from the rest of the implementation.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="version">Version</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>It is also important to note that dependencies should come with a certain version number for it. A commonly used schema for the definition of versions of dependencies is the <a href="https://semver.org/">semantic versioning</a> scheme. In short, it contains at least three numbers: the major version, minor version and patch version seperated by dots;</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>MAJOR.MINOR.PATCH</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>An increment of the <em>major</em> version, means that there has been a change that is not backwards compatible. An increment in the <em>minor</em> version means that there has bee functionality added while remaining backwards compatible. An
+increment of the <em>patch</em> version means that there was a change while remaining backwards compatible.</p>
+</div>
+<div class="paragraph">
+<p>This distinction of updates to a dependency is used to propose different coarses of action. It is therefore not necessary that the same kind of versioning schema is used.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="proposed_approach">Proposed approach</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>In general the dependencies should be updated as soon as possible because support can be dropped for them, meaning that important necessary changes (security patches) may no longer be released for those versions. The following table summarizes the approach. After the table, the actions are elaborated on.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 16.6666%;">
+<col style="width: 16.6666%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3335%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top" colspan="2" rowspan="2"></td>
+<th class="tableblock halign-center valign-top" colspan="2"><p class="tableblock">Control</p></th>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Internal</p></th>
+<th class="tableblock halign-left valign-top"><p class="tableblock">External</p></th>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top" rowspan="2"><p class="tableblock">Affection</p></th>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Library</p></th>
+<td class="tableblock halign-left valign-top" rowspan="2"><div class="content"><div class="paragraph">
+<p>Continuous integration</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Major: Update or create issue<br>
+Minor: Update<br>
+Patch: Update</p></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Framework</p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Major: Spike<br>
+Minor: Update<br>
+Patch: Update</p></td>
+</tr>
+</tbody>
+</table>
+<div class="sect2">
+<h3 id="continuous_integration">Continuous integration</h3>
+<div class="paragraph">
+<p>All internal dependencies can be updated using continuous integration. An automatic test step in the build process will need to make sure that changes do not result in regression. This also means that there is no option to not include updated versions of dependencies.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="update">Update</h3>
+<div class="paragraph">
+<p>External dependencies should always be updated to their newer patch release versions. Patch releases are (should be) always backwards compatible, therefore there is little risk in introducing regression. At the same time, important security issues will be fixed using patch releases (if possible without introducing regression, obviously). An automatic test step in the build process will need to make sure that changes do not result in regression.</p>
+</div>
+<div class="paragraph">
+<p>Always update to the new version, because it should be backwards compatible, and regression will be covered by tests. Moreso, this is important for patches, since security issues are usually solved in patch updates.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="update_or_create_issue">Update or create issue</h3>
+<div class="paragraph">
+<p>Using a versioning scheme with major version increments, incrementing the major version is a deliberate choice, because you know you will incur necessary effort for (some of) the users of the dependency to change the implementation to work with the changed interface. As a user, it is therfore necessary to identify the necessary changes to the implementation that interacts with the dependency.</p>
+</div>
+<div class="paragraph">
+<p>For a library, there is a possibility that you&#8217;re not using any of the functionality where the backwards compatibility is broken. Therefore, testing with the newest version might prove that the newest version can be included, without any changes to the implementation. Otherwise, if the test fails, a new issue is created to make the necessary changes and update the dependency.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="spike">Spike</h3>
+<div class="paragraph">
+<p>For frameworks, a major update is more likely to incur effort necessary to update the implementation to be compatible with the new version. Since a test is likely to fail, it is superfluous to perform. Instead, a spike should be created to evaluate the necessary effort. If effort is little, the update can be part of the spike. Otherwise, a new issue will be created that describes the sections where changes are necessary, so it can be estimated.</p>
+</div>
+<div class="paragraph">
+<p>Note that tests should be performed on all the quality attributes that a framework affects. Noteably, a framework used for developing a user interface, could have changes that change the way users have to interact with the software, thus affects the usability. This proves that tests should also be performed on the non-functional requirements.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="when_not_to_update">When not to update</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>There should be <em>no</em> reason <em>not</em> to update dependencies to their newer patch or minor versions. However, for major updates, it might be possible that the changes do not pass the tests. In that case, before the new versions can be used, the owners of the requirements should be informed and agree on the change.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="automation">Automation</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Updating and testing with new versions of dependencies are both automatable as part of the continous integration pipeline. Teams should put effort in setting up such a pipeline.</p>
+</div>
+</div>
+</div>
+  </div><a class="u-url" href="/blog/maintaining-external-dependencies" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/blog/"></data>
+
+  <div class="wrapper">
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">
+            <strong>Joël van den Berg</strong>
+          </li><li><a class="u-email" href="mailto:joel.vandenberg at deltares.nl">joel.vandenberg at deltares.nl</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>This blog will contain mostly opinionated articles about process, tools, languages and other software development related topics, applicable in the context at Deltares.</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer></body>
+
+</html>

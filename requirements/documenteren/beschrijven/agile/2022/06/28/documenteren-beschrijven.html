@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Documenteren, de weg naar het beschrijven | Architecture at Deltares - Blog</title>
+<meta name="generator" content="Jekyll v3.9.2" />
+<meta property="og:title" content="Documenteren, de weg naar het beschrijven" />
+<meta name="author" content="Joël van den Berg" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Vanuit watervalachtige methodieken zijn we gewend documenten op te stellen. Deze focus op documenten zit het effectief beschrijven van de software voor de eindgebruikers in de weg." />
+<meta property="og:description" content="Vanuit watervalachtige methodieken zijn we gewend documenten op te stellen. Deze focus op documenten zit het effectief beschrijven van de software voor de eindgebruikers in de weg." />
+<link rel="canonical" href="/blog/requirements/documenteren/beschrijven/agile/2022/06/28/documenteren-beschrijven.html" />
+<meta property="og:url" content="/blog/requirements/documenteren/beschrijven/agile/2022/06/28/documenteren-beschrijven.html" />
+<meta property="og:site_name" content="Architecture at Deltares - Blog" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2022-06-28T00:00:00+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Documenteren, de weg naar het beschrijven" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Joël van den Berg"},"dateModified":"2022-06-28T00:00:00+00:00","datePublished":"2022-06-28T00:00:00+00:00","description":"Vanuit watervalachtige methodieken zijn we gewend documenten op te stellen. Deze focus op documenten zit het effectief beschrijven van de software voor de eindgebruikers in de weg.","headline":"Documenteren, de weg naar het beschrijven","mainEntityOfPage":{"@type":"WebPage","@id":"/blog/requirements/documenteren/beschrijven/agile/2022/06/28/documenteren-beschrijven.html"},"url":"/blog/requirements/documenteren/beschrijven/agile/2022/06/28/documenteren-beschrijven.html"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/blog/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="/blog/feed.xml" title="Architecture at Deltares - Blog" /><!-- You can set your favicon here -->
+<!-- link rel="shortcut icon" type="image/x-icon" href="/blog/favicon.ico" -->
+<link rel="stylesheet" href="/blog/assets/css/asciidoc_additional_classes.css"></head>
+<body><header class="site-header">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/blog/">Architecture at Deltares - Blog</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/blog/about/">About</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Documenteren, de weg naar het beschrijven</h1>
+    <p class="post-meta"><time class="dt-published" datetime="2022-06-28T00:00:00+00:00" itemprop="datePublished">
+        Jun 28, 2022
+      </time></p>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <div class="sect1">
+<h2 id="meer_agile_werken">Meer <em>agile</em> werken</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Gedurende de laatste jaren hebben we veel verandering teweeg kunnen brengen in de manier waarop we werken. Vanuit de "<em>agile</em>" gedachte zijn we in gesprek gegaan met de eindgebruikers, hebben we in kleine iteraties software opgeleverd en hebben we de reacties gebruikt voor de volgende kleine iteratie. De <em>documentatie</em> die we opleveren kent echter een ander ontwikkelproces. Vaak wordt achteraf, na een aantal iteraties, geconstateerd dat de documentatie gedateerd is en een update nodig heeft. In een enkel geval is het updaten van de documentatie een onderdeel van de "definition of done" voor een iteratie en sluit zodoende beter aan bij de gedachte achter een wendbare werkwijze. De keuze voor wat er aangepast moet worden doen we op basis van ons eigen inzicht: geen gebruiker wordt gevraagd wat er in de documenten moet komen.</p>
+</div>
+<div class="paragraph">
+<p>Er zijn afspraken omtrent de documentatie die we moeten opleveren, gebaseerd op een oudere standaard (J-STD) en een zogenoemde <em>algemene software engineering praktijk</em>, wat in de praktijk neerkomt op de volgende richtlijn voor op te leveren documenten.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Requirements document *</p>
+</li>
+<li>
+<p>Functioneel ontwerp *</p>
+</li>
+<li>
+<p>Technisch ontwerp</p>
+</li>
+<li>
+<p>Technische documentatie / systeemdocumentatie</p>
+</li>
+<li>
+<p>Testplan</p>
+</li>
+<li>
+<p>Testrapport / validatierapport</p>
+</li>
+<li>
+<p>Installatiehandleiding</p>
+</li>
+<li>
+<p>Gebruikershandleiding</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>*) Het requirements document en functioneel ontwerp mogen samengevoegd worden.</p>
+</div>
+<div class="paragraph">
+<p>Als we kijken naar de beschrijving van de J-STD standaard, dan beschrijft men daar dat besproken moet worden tussen opdrachtgever en opdrachtnemer, welke <em>software producten</em> opgeleverd moeten worden en wat de inhoud ervan moet zijn, zodat alleen de nodige en kosten-efficiënte eisen worden toegepast. Aangezien er geen afspraken te vinden zijn over de <em>software producten</em> en de vereiste inhoud, kan geconcludeerd worden dat dergelijke afspraken niet zijn gemaakt.</p>
+</div>
+<div class="paragraph">
+<p>Als we kijken naar de algemene software engineering praktijk, dan is op te merken dat het functioneel ontwerp en het technisch ontwerp een onderdeel van overdracht zijn van de architect richting de ontwikkelaars in een meer waterval-georiënteerde ontwikkelmethodiek. Het functioneel ontwerp beschrijft de (niet) functionele eisen die worden gesteld aan het systeem, op basis van de features die zijn gedefinieerd met als doel het realiseren van de doelen van de gebruiker. Het technisch ontwerp vertaalt de (niet) functionele eisen naar een beschrijving van de benodigde implementatie. De manier van vooraf de (niet) functionele eisen en technische implementatie beschrijven is dus tegenstrijdig met de manier waarop de documentatie op dit moment, na ontwikkeling, wordt geüpdatet. Ook kan dus geconcludeerd worden dat de doelgroep van het functioneel ontwerp en het technisch ontwerp voor gebruik in het de waterval-georiënteerde methodiek anders moet zijn dan de doelgroep van de door ons opgeleverde documenten. Maar wie is dán de doelgroep van onze documentatie?</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+Onze manier van documentatie is niet kosten efficiënt en niet toegespitst op het beoogde gebruik ervan.
+</blockquote>
+</div>
+<div class="paragraph">
+<p>Een veelgehoord beoogd doel is het mogelijk maken dat de ontwikkeling van producten overdraagbaar is. Met andere woorden, wanneer een nieuw team verder gaat met de ontwikkeling van een product, dan moeten het functionele ontwerp document en het technisch ontwerp document gebruikt kunnen worden om dit te versoepelen. Sommigen zouden ook willen dat de documentatie aan nieuwe ontwikkelaars overgedragen kan worden, zodat zij na kennisneming meteen aan de slag kunnen. Vaak bevat de documentatie echter wel beschrijvingen van een gewenste situatie, maar de belangrijke afwijkingen op het ontwerp vinden juist niet vaak hun weg terug naar documentatie. Het zijn juist deze afwijkingen die belangrijk zijn om te onderkennen bij de verdere ontwikkeling.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="beschrijven">Beschrijven</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Naast het doel om de ontwikkeling van het product over te kunnen dragen aan een nieuw team of nieuwe teamleden, is er een ander doel dat hieraan gerelateerd is, niet veel genoemd wordt in de discussie over documentatie, maar wel veel ter sprake komt tijdens de ontwikkeling van producten: het overdragen van de ontwikkeling van het product binnen het team, en zelfs de "toekomstige ik". De oplossingen kenmerken zich door de acceptatie van het veranderende karakter van implementaties. Daarom worden beschrijvingen zo dicht mogelijk bij hetgeen dat wordt beschreven gehouden, zodat de kans dat de beschrijving wordt geüpdatet bij een wijziging groter is. Ook wordt de intentie, het wat, beschreven in plaats van de manier waarop het doel gerealiseerd is, het hoe. Bij een juiste toepassing van beschrijvingen, kunnen tevens tools gebruikt worden om de beschrijvingen nog toegankelijker te maken. Daarnaast helpt het om een door het hele ontwikkelteam gedragen manier van ontwikkelen te handhaven en deze ook iteratief te onderhouden. De ervaring leert dat door de focus aan te brengen op zelf beschrijvende implementaties, ook nieuwe ontwikkelaars zichzelf snel comfortabel voelen om met de code te werken.</p>
+</div>
+<div class="paragraph">
+<p>Tijdens de ontwikkeling wordt natuurlijk ook nagedacht over de functionaliteit die geïmplementeerd moet worden. In plaats van het volledig uitwerken van een functioneel ontwerp, wordt ook het proces rond het uitwerken van (niet) functionele eisen gekenmerkt door het veranderende karakter van de omgeving, waaronder stakeholders. Grote functionele concepten die doelen van gebruikers beschrijven, worden tijdens de ontwikkeling verfijnd tot (niet) functionele eigenschappen van het systeem die samen de gebruiker ondersteunt in het bereiken van deze doelen. Deze beschrijvingen vormen samen in feite het functionele ontwerp.</p>
+</div>
+<div class="paragraph">
+<p>Dit is meestal het niveau van waaruit de ontwikkeling start. Het is echter mogelijk om een brug te slaan tussen functionele en technische beschrijvingen, waardoor de code ook zichzelf functioneel zou kunnen beschrijven. Deze methode, genaamd Behavior Driven Development, laat ontwikkelaars en stakeholders samen user stories verder uitwerken in scenario&#8217;s. BDD tools stellen de ontwikkelaars vervolgens in staat om de scenario&#8217;s in code te definiëren. Vanaf dit punt kunnen de scenario&#8217;s verder worden uitgewerkt richting implementatie, maar ook uitgevoerd worden en met resultaat geaggregeerd worden in een rapport.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="conclusie">Conclusie</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Er zijn in het verleden aannames gedaan: de J-STD standaard schrijft een aantal documenten voor, het functioneel ontwerp en technisch ontwerp zoals opgeleverd en overgedragen aan een ontwikkelteam is bruikbaar voor verdere ontwikkeling, en documentatie van software bestaat uitsluitend uit documenten.</p>
+</div>
+<div class="paragraph">
+<p>In dit artikel is geprobeerd duidelijk te maken dat de huidige vorm van op te leveren documentatie niet is voortgekomen uit een concrete wens van beoogde doelgroepen, maar gebaseerd is op een methodiek die we zelf niet volgen. Er zijn technieken die veel beter toe te passen zijn in de methodiek die we volgen, en hoewel deze niet resulteren in documenten, beschrijven ze wel beter op een functioneel en technisch niveau wat heeft geleid tot het opgeleverde product. En hoewel het voornaamste doel van deze technieken is om als ontwikkelteam zelf beter in staat te zijn om met vertrouwen wijzigingen aan te brengen in de implementatie, resulteert dit ook in begrijpbaarheid van de implementatie van buiten het huidigen ontwikkelteam.</p>
+</div>
+<div class="paragraph">
+<p>P.S. ik kan me voorstellen dat men denkt dat beschrijvingen die door ontwikkelaars worden opgesteld alleen maar te begrijpen is voor ontwikkelaars in het team. Dit is echter een risico bij iedere vorm van beschrijvingen die niet wordt getoetst bij de beoogde doelgroep.</p>
+</div>
+</div>
+</div>
+  </div><a class="u-url" href="/blog/requirements/documenteren/beschrijven/agile/2022/06/28/documenteren-beschrijven.html" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/blog/"></data>
+
+  <div class="wrapper">
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">
+            <strong>Joël van den Berg</strong>
+          </li><li><a class="u-email" href="mailto:joel.vandenberg at deltares.nl">joel.vandenberg at deltares.nl</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>This blog will contain mostly opinionated articles about process, tools, languages and other software development related topics, applicable in the context at Deltares.</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer></body>
+
+</html>
